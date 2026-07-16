@@ -41,7 +41,7 @@ test("overview renders the responsive desktop and tablet shell", async ({
 
     await expect(page.getByTestId("dashboard-shell")).toBeVisible();
     await expect(page.getByTestId("dashboard-header")).toBeVisible();
-    await expect(page.getByText("Overview workspace ready.")).toBeVisible();
+    await expect(page.getByLabel("Overview dashboard")).toBeVisible();
 
     const sidebarBox = await page.getByTestId("desktop-sidebar").boundingBox();
     const headerBox = await page.getByTestId("dashboard-header").boundingBox();
@@ -73,7 +73,9 @@ test("overview renders the responsive desktop and tablet shell", async ({
     page.getByText("Good morning, Alex. Here’s what’s happening today."),
   ).toBeVisible();
   await expect(
-    page.getByText("May 12 – May 18", { exact: true }),
+    page.getByRole("button", {
+      name: "Selected date range: May 12 through May 18",
+    }),
   ).toBeVisible();
 
   for (const label of requiredNavigation) {
