@@ -17,5 +17,9 @@ export const navigationConfig = {
       label: "Overview",
       href: APP_ROUTES.overview,
     },
+    {
+      label: "Calls",
+      href: APP_ROUTES.calls,
+    },
   ] satisfies NavigationItem[],
 } as const;

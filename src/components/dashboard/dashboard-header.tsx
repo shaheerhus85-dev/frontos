@@ -1,6 +1,7 @@
 "use client";
 
 import { Bell, CalendarDays, Menu, Search } from "lucide-react";
+import { usePathname } from "next/navigation";
 import { useState } from "react";
 
 import { DashboardSidebar } from "@/components/dashboard/dashboard-sidebar";
@@ -16,9 +17,26 @@ import {
   SheetTitle,
   SheetTrigger,
 } from "@/components/ui/sheet";
+import { APP_ROUTES } from "@/config/constants";
+
+const routeHeaders = {
+  [APP_ROUTES.overview]: {
+    title: "Overview",
+    description: "Good morning, Alex. Here’s what’s happening today.",
+  },
+  [APP_ROUTES.calls]: {
+    title: "Calls",
+    description: "Review AI-handled conversations, outcomes, and escalations.",
+  },
+} as const;
 
 export function DashboardHeader() {
   const [mobileNavigationOpen, setMobileNavigationOpen] = useState(false);
+  const pathname = usePathname();
+  const header = routeHeaders[pathname as keyof typeof routeHeaders] ?? {
+    title: "FrontOS",
+    description: "Manage your business operations from one workspace.",
+  };
 
   return (
     <header
@@ -59,10 +77,10 @@ export function DashboardHeader() {
 
         <div className="min-w-0 flex-1">
           <h1 className="truncate font-display text-lg font-semibold tracking-[-0.02em] text-foreground sm:text-xl">
-            Overview
+            {header.title}
           </h1>
           <p className="mt-0.5 hidden truncate text-xs text-secondary sm:block lg:text-[13px]">
-            Good morning, Alex. Here’s what’s happening today.
+            {header.description}
           </p>
         </div>
 
