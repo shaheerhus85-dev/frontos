@@ -1,6 +1,6 @@
 # FrontOS
 
-FrontOS is a production-oriented Next.js SaaS codebase. Phase 2.3A establishes the project, Aurora Prism design tokens, route boundaries, typed environment handling, Supabase client boundaries, formatting, and smoke testing. It intentionally contains no product UI, authentication, data fetching, or business logic.
+FrontOS is a production-oriented Next.js SaaS codebase. Phase 2.3A established the project foundation; Phase 2.3B adds Aurora Prism shared UI primitives and the responsive dashboard application shell. It intentionally contains no dashboard metrics, charts, authentication, data fetching, or business logic.
 
 ## Setup
 
@@ -28,7 +28,7 @@ The app runs at `http://localhost:3000`. Foundation routes are `/`, `/onboarding
 ```text
 src/
 ├── app/                 # App Router route groups
-├── components/          # ui, shared, and feature component boundaries
+├── components/          # Aurora UI primitives, shared identity, and dashboard shell
 ├── config/              # site, navigation, constants, and typed environment access
 ├── hooks/               # reusable React hooks
 ├── lib/                 # framework-agnostic utilities and service clients
@@ -40,4 +40,4 @@ Server Components are the default. Browser-only boundaries are explicit, environ
 
 ## Phase boundary
 
-Phase 2.3A stops at foundation readiness. Do not add dashboard chrome, onboarding steps, marketing sections, animation behavior, authentication, charts, or real data until their approved implementation phase. The recommended next phase is **Phase 2.3B: Shared UI Primitives and Application Shell**, using the approved mockup/specification as its source of truth.
+Phase 2.3B stops at reusable primitives and application-shell readiness. Do not add Overview KPIs, charts, activity feeds, integrations, onboarding steps, marketing sections, authentication, or real data until their approved implementation phase. The exact next phase is **Phase 2.3C — Overview Dashboard Screen**.

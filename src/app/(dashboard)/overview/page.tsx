@@ -1,17 +1,18 @@
 import type { Metadata } from "next";
 
-import { FoundationPlaceholder } from "@/components/shared/foundation-placeholder";
-
 export const metadata: Metadata = {
   title: "Overview",
 };
 
-export default function OverviewPlaceholderPage() {
+export default function OverviewPage() {
   return (
-    <FoundationPlaceholder
-      eyebrow="Route Placeholder"
-      title="Overview"
-      description="The private dashboard will be implemented in a later phase."
-    />
+    <section
+      className="grid min-h-full place-items-center"
+      aria-label="Overview workspace status"
+    >
+      <p className="text-sm font-medium text-muted">
+        Overview workspace ready.
+      </p>
+    </section>
   );
 }
