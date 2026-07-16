@@ -28,12 +28,14 @@ export function SheetOverlay({
 type SheetContentProps = React.ComponentProps<
   typeof DialogPrimitive.Content
 > & {
+  closeLabel?: string;
   side?: "left" | "right";
 };
 
 export function SheetContent({
   children,
   className,
+  closeLabel = "Close navigation",
   side = "right",
   ...props
 }: SheetContentProps) {
@@ -54,7 +56,7 @@ export function SheetContent({
         {children}
         <DialogPrimitive.Close
           className="absolute top-4 right-4 grid size-9 place-items-center rounded-xl text-secondary transition-colors hover:bg-surface-secondary hover:text-foreground focus-visible:ring-3 focus-visible:ring-primary/20 focus-visible:outline-none"
-          aria-label="Close navigation"
+          aria-label={closeLabel}
         >
           <X className="size-5 stroke-[1.8]" aria-hidden="true" />
         </DialogPrimitive.Close>

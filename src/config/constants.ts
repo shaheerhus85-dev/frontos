@@ -2,6 +2,7 @@ export const APP_ROUTES = {
   home: "/",
   onboarding: "/onboarding",
   overview: "/overview",
+  calls: "/calls",
 } as const;
 
 export const ENVIRONMENT_KEYS = {
