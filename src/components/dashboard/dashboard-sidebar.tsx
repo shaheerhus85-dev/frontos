@@ -40,7 +40,7 @@ type SidebarItem = Readonly<{
 const primaryNavigation: SidebarItem[] = [
   { label: "Overview", icon: LayoutDashboard, href: APP_ROUTES.overview },
   { label: "Calls", icon: PhoneCall, href: APP_ROUTES.calls },
-  { label: "Bookings", icon: CalendarDays },
+  { label: "Bookings", icon: CalendarDays, href: APP_ROUTES.bookings },
   { label: "Leads", icon: UserRoundSearch },
   { label: "Customers", icon: UsersRound },
   { label: "AI Agents", icon: Bot },

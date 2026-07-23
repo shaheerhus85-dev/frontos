@@ -28,6 +28,10 @@ const routeHeaders = {
     title: "Calls",
     description: "Review AI-handled conversations, outcomes, and escalations.",
   },
+  [APP_ROUTES.bookings]: {
+    title: "Bookings",
+    description: "Manage appointments, availability, and scheduling outcomes.",
+  },
 } as const;
 
 export function DashboardHeader() {

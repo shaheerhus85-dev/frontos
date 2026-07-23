@@ -3,6 +3,7 @@ export const APP_ROUTES = {
   onboarding: "/onboarding",
   overview: "/overview",
   calls: "/calls",
+  bookings: "/bookings",
 } as const;
 
 export const ENVIRONMENT_KEYS = {
