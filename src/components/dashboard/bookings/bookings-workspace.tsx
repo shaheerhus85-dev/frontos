@@ -6,6 +6,7 @@ import { BookingDetailSheet } from "@/components/dashboard/bookings/booking-deta
 import { BookingsList } from "@/components/dashboard/bookings/bookings-list";
 import {
   BookingsSchedule,
+  getVisibleScheduleBookings,
   type ScheduleRange,
 } from "@/components/dashboard/bookings/bookings-schedule";
 import {
@@ -50,6 +51,11 @@ export function BookingsWorkspace({ bookings }: BookingsWorkspaceProps) {
   const hasActiveFilters =
     search.trim().length > 0 || status !== "All" || service !== "All";
 
+  const visibleBookings =
+    view === "list"
+      ? filteredBookings
+      : getVisibleScheduleBookings(filteredBookings, scheduleRange);
+
   function clearFilters() {
     setSearch("");
     setStatus("All");
@@ -84,7 +90,7 @@ export function BookingsWorkspace({ bookings }: BookingsWorkspaceProps) {
           status={status}
           service={service}
           view={view}
-          resultCount={filteredBookings.length}
+          resultCount={visibleBookings.length}
           hasActiveFilters={hasActiveFilters}
           onSearchChange={setSearch}
           onStatusChange={setStatus}
@@ -97,7 +103,7 @@ export function BookingsWorkspace({ bookings }: BookingsWorkspaceProps) {
           <BookingsList bookings={filteredBookings} onSelect={openBooking} />
         ) : (
           <BookingsSchedule
-            bookings={filteredBookings}
+            bookings={visibleBookings}
             range={scheduleRange}
             onRangeChange={setScheduleRange}
             onSelect={openBooking}
