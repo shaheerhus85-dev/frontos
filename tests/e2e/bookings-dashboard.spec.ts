@@ -202,22 +202,50 @@ test("list and schedule views switch with Today and Week ranges", async ({
   await page.setViewportSize({ width: 1440, height: 900 });
   await page.goto("/bookings");
 
+  const workspace = page.getByTestId("bookings-workspace");
+  const resultStatus = workspace.getByRole("status");
+  const scheduleBookings = workspace.locator(
+    '[data-testid^="schedule-booking-"]',
+  );
+
+  await expect(resultStatus).toHaveText("10 bookings shown");
+
   await page.getByRole("button", { name: "Schedule", exact: true }).click();
   await expect(page.getByTestId("bookings-table")).toBeHidden();
   await expect(page.getByTestId("bookings-schedule")).toBeVisible();
   await expect(page.getByTestId("today-schedule")).toBeVisible();
   await expect(page.getByText("Monday, May 18")).toBeVisible();
+  await expect(page.getByText("4 scheduled appointments")).toBeVisible();
+  await expect(resultStatus).toHaveText("4 bookings shown");
+  await expect(scheduleBookings).toHaveCount(4);
   await expect(page.getByTestId("schedule-booking-booking-001")).toBeVisible();
 
   await page.getByRole("tab", { name: "Week", exact: true }).click();
   await expect(page.getByTestId("week-schedule")).toBeVisible();
+  await expect(resultStatus).toHaveText("10 bookings shown");
+  await expect(scheduleBookings).toHaveCount(10);
   await expect(page.getByLabel("Tue, May 12")).toBeVisible();
   await expect(page.getByLabel("Mon, May 18")).toBeVisible();
   await expectNoHorizontalOverflow(page);
 
+  await page.getByRole("tab", { name: "Today", exact: true }).click();
+  await page
+    .getByRole("combobox", { name: "Filter bookings by status" })
+    .click();
+  await page.getByRole("option", { name: "Pending", exact: true }).click();
+  await expect(resultStatus).toHaveText("1 booking shown");
+  await expect(scheduleBookings).toHaveCount(1);
+  await expect(page.getByTestId("schedule-booking-booking-002")).toBeVisible();
+  await expect(page.getByTestId("schedule-booking-booking-001")).toBeHidden();
+
+  await page.getByRole("button", { name: "Clear booking filters" }).click();
+  await expect(resultStatus).toHaveText("4 bookings shown");
+  await expect(scheduleBookings).toHaveCount(4);
+
   await page.getByRole("button", { name: "List", exact: true }).click();
   await expect(page.getByTestId("bookings-table")).toBeVisible();
   await expect(page.getByTestId("bookings-schedule")).toBeHidden();
+  await expect(resultStatus).toHaveText("10 bookings shown");
 });
 
 test("tablet layouts preserve two KPI columns and simplify the table", async ({

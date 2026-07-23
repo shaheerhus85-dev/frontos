@@ -34,6 +34,22 @@ const weekDays = [
   { dateIso: "2026-05-18", day: "Mon", date: "18" },
 ] as const;
 
+const todayDateIso = "2026-05-18";
+const weekDateIsos: ReadonlySet<string> = new Set(
+  weekDays.map((day) => day.dateIso),
+);
+
+export function getVisibleScheduleBookings(
+  bookings: readonly BookingRecord[],
+  range: ScheduleRange,
+) {
+  return bookings.filter((booking) =>
+    range === "today"
+      ? booking.dateIso === todayDateIso
+      : weekDateIsos.has(booking.dateIso),
+  );
+}
+
 const appointmentTones: Record<BookingStatus, string> = {
   Confirmed: "border-l-[#2878ff] bg-[#f3f7ff]",
   Pending: "border-l-[#f2a93b] bg-[#fffaf0]",
@@ -105,17 +121,13 @@ function TodaySchedule({
   bookings: readonly BookingRecord[];
   onSelect: (booking: BookingRecord) => void;
 }>) {
-  const todayBookings = bookings.filter(
-    (booking) => booking.dateIso === "2026-05-18",
-  );
-
   return (
     <div className="px-4 py-4 sm:px-5 lg:px-6" data-testid="today-schedule">
       <div className="mb-4 flex items-center justify-between gap-3">
         <div>
           <p className="text-sm font-semibold text-[#253148]">Monday, May 18</p>
           <p className="mt-0.5 text-xs text-muted">
-            {todayBookings.length} scheduled appointments
+            {bookings.length} scheduled appointments
           </p>
         </div>
         <span className="rounded-full bg-[#edf4ff] px-2.5 py-1 text-xs font-semibold text-[#1e63cf]">
@@ -125,7 +137,7 @@ function TodaySchedule({
 
       <div className="overflow-hidden rounded-2xl border border-border">
         {todaySlots.map((slot) => {
-          const slotBookings = todayBookings.filter(
+          const slotBookings = bookings.filter(
             (booking) => booking.startHour === slot.hour,
           );
 
