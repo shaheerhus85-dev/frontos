@@ -32,6 +32,11 @@ const routeHeaders = {
     title: "Bookings",
     description: "Manage appointments, availability, and scheduling outcomes.",
   },
+  [APP_ROUTES.leads]: {
+    title: "Leads",
+    description:
+      "Track prospects, qualification progress, and conversion opportunities.",
+  },
 } as const;
 
 export function DashboardHeader() {
