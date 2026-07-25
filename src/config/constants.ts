@@ -5,6 +5,7 @@ export const APP_ROUTES = {
   calls: "/calls",
   bookings: "/bookings",
   leads: "/leads",
+  customers: "/customers",
 } as const;
 
 export const ENVIRONMENT_KEYS = {
