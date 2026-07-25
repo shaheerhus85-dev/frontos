@@ -37,6 +37,11 @@ const routeHeaders = {
     description:
       "Track prospects, qualification progress, and conversion opportunities.",
   },
+  [APP_ROUTES.customers]: {
+    title: "Customers",
+    description:
+      "Understand customer relationships, activity, and service history.",
+  },
 } as const;
 
 export function DashboardHeader() {
