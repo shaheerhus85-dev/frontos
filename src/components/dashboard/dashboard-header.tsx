@@ -42,6 +42,11 @@ const routeHeaders = {
     description:
       "Understand customer relationships, activity, and service history.",
   },
+  [APP_ROUTES.aiAgents]: {
+    title: "AI Agents",
+    description:
+      "Monitor agent performance, responsibilities, and operational health.",
+  },
 } as const;
 
 export function DashboardHeader() {
