@@ -9,7 +9,7 @@ export function DashboardShell({
     <TooltipProvider>
       <div
         data-testid="dashboard-shell"
-        className="flex h-dvh w-full overflow-hidden bg-background"
+        className="fixed inset-0 flex h-dvh w-full overflow-hidden bg-background"
       >
         <aside
           data-testid="desktop-sidebar"
@@ -18,7 +18,7 @@ export function DashboardShell({
         >
           <DashboardSidebar />
         </aside>
-        <div className="flex min-w-0 flex-1 flex-col overflow-hidden">
+        <div className="flex min-h-0 min-w-0 flex-1 flex-col overflow-hidden">
           <DashboardHeader />
           <main
             data-testid="dashboard-content"

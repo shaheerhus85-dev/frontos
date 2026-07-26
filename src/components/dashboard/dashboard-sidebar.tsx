@@ -43,7 +43,7 @@ const primaryNavigation: SidebarItem[] = [
   { label: "Bookings", icon: CalendarDays, href: APP_ROUTES.bookings },
   { label: "Leads", icon: UserRoundSearch, href: APP_ROUTES.leads },
   { label: "Customers", icon: UsersRound, href: APP_ROUTES.customers },
-  { label: "AI Agents", icon: Bot },
+  { label: "AI Agents", icon: Bot, href: APP_ROUTES.aiAgents },
   { label: "Knowledge Base", icon: BookOpenText },
   { label: "Integrations", icon: PlugZap },
   { label: "Reports", icon: BarChart3 },
