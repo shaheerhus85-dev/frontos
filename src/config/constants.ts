@@ -7,6 +7,7 @@ export const APP_ROUTES = {
   leads: "/leads",
   customers: "/customers",
   aiAgents: "/ai-agents",
+  knowledgeBase: "/knowledge-base",
 } as const;
 
 export const ENVIRONMENT_KEYS = {
