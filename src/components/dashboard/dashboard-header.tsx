@@ -47,6 +47,11 @@ const routeHeaders = {
     description:
       "Monitor agent performance, responsibilities, and operational health.",
   },
+  [APP_ROUTES.knowledgeBase]: {
+    title: "Knowledge Base",
+    description:
+      "Manage the information your AI agents use to answer and act accurately.",
+  },
 } as const;
 
 export function DashboardHeader() {
