@@ -49,7 +49,7 @@ const primaryNavigation: SidebarItem[] = [
     icon: BookOpenText,
     href: APP_ROUTES.knowledgeBase,
   },
-  { label: "Integrations", icon: PlugZap },
+  { label: "Integrations", icon: PlugZap, href: APP_ROUTES.integrations },
   { label: "Reports", icon: BarChart3 },
 ];
 
