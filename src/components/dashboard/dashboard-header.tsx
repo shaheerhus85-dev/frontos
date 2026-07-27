@@ -52,6 +52,11 @@ const routeHeaders = {
     description:
       "Manage the information your AI agents use to answer and act accurately.",
   },
+  [APP_ROUTES.integrations]: {
+    title: "Integrations",
+    description:
+      "Monitor connected tools, automation activity, and operational health.",
+  },
 } as const;
 
 export function DashboardHeader() {
