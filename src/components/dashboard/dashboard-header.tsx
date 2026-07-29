@@ -57,6 +57,11 @@ const routeHeaders = {
     description:
       "Monitor connected tools, automation activity, and operational health.",
   },
+  [APP_ROUTES.reports]: {
+    title: "Reports",
+    description:
+      "Understand performance, growth, automation, and operational outcomes.",
+  },
 } as const;
 
 export function DashboardHeader() {

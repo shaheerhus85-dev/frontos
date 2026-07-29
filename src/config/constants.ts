@@ -9,6 +9,7 @@ export const APP_ROUTES = {
   aiAgents: "/ai-agents",
   knowledgeBase: "/knowledge-base",
   integrations: "/integrations",
+  reports: "/reports",
 } as const;
 
 export const ENVIRONMENT_KEYS = {

@@ -50,7 +50,7 @@ const primaryNavigation: SidebarItem[] = [
     href: APP_ROUTES.knowledgeBase,
   },
   { label: "Integrations", icon: PlugZap, href: APP_ROUTES.integrations },
-  { label: "Reports", icon: BarChart3 },
+  { label: "Reports", icon: BarChart3, href: APP_ROUTES.reports },
 ];
 
 const utilityNavigation: SidebarItem[] = [
