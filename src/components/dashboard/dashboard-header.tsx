@@ -62,6 +62,11 @@ const routeHeaders = {
     description:
       "Understand performance, growth, automation, and operational outcomes.",
   },
+  [APP_ROUTES.settings]: {
+    title: "Settings",
+    description:
+      "Configure your workspace, AI behavior, notifications, and operational preferences.",
+  },
 } as const;
 
 export function DashboardHeader() {

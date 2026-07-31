@@ -54,7 +54,7 @@ const primaryNavigation: SidebarItem[] = [
 ];
 
 const utilityNavigation: SidebarItem[] = [
-  { label: "Settings", icon: Settings },
+  { label: "Settings", icon: Settings, href: APP_ROUTES.settings },
   { label: "Help & Support", icon: CircleHelp },
 ];
 
