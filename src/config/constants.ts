@@ -10,6 +10,7 @@ export const APP_ROUTES = {
   knowledgeBase: "/knowledge-base",
   integrations: "/integrations",
   reports: "/reports",
+  settings: "/settings",
 } as const;
 
 export const ENVIRONMENT_KEYS = {

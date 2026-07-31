@@ -1,0 +1,17 @@
+ docs/asset-policy.md                               |  41 [32m++[m
+ src/app/(dashboard)/settings/page.tsx              |   9 [32m+[m
+ src/components/dashboard/dashboard-header.tsx      |   5 [32m+[m
+ src/components/dashboard/dashboard-sidebar.tsx     |   2 [32m+[m[31m-[m
+ src/components/dashboard/settings/ai-behavior.tsx  | 202 [32m++++++++++[m
+ .../dashboard/settings/business-hours.tsx          | 167 [32m++++++++[m
+ src/components/dashboard/settings/danger-zone.tsx  | 154 [32m++++++++[m
+ .../dashboard/settings/notification-settings.tsx   | 124 [32m++++++[m
+ .../dashboard/settings/privacy-settings.tsx        | 110 [32m++++++[m
+ .../dashboard/settings/settings-controls.tsx       |  84 [32m++++[m
+ .../dashboard/settings/settings-workspace.tsx      | 260 [32m++++++++++++[m
+ .../dashboard/settings/workspace-profile.tsx       | 126 [32m++++++[m
+ src/components/ui/switch.tsx                       |  64 [32m+++[m
+ src/config/constants.ts                            |   1 [32m+[m
+ src/data/settings.ts                               | 397 [32m+++++++++++++++++++[m
+ tests/e2e/settings-dashboard.spec.ts               | 439 [32m+++++++++++++++++++++[m
+ 16 files changed, 2184 insertions(+), 1 deletion(-)
