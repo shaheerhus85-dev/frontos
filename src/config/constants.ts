@@ -11,6 +11,7 @@ export const APP_ROUTES = {
   integrations: "/integrations",
   reports: "/reports",
   settings: "/settings",
+  helpSupport: "/help-support",
 } as const;
 
 export const ENVIRONMENT_KEYS = {

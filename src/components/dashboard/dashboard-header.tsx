@@ -67,6 +67,11 @@ const routeHeaders = {
     description:
       "Configure your workspace, AI behavior, notifications, and operational preferences.",
   },
+  [APP_ROUTES.helpSupport]: {
+    title: "Help & Support",
+    description:
+      "Find guidance, review system health, and get help with your FrontOS workspace.",
+  },
 } as const;
 
 export function DashboardHeader() {

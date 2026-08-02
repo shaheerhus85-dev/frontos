@@ -55,7 +55,11 @@ const primaryNavigation: SidebarItem[] = [
 
 const utilityNavigation: SidebarItem[] = [
   { label: "Settings", icon: Settings, href: APP_ROUTES.settings },
-  { label: "Help & Support", icon: CircleHelp },
+  {
+    label: "Help & Support",
+    icon: CircleHelp,
+    href: APP_ROUTES.helpSupport,
+  },
 ];
 
 type DashboardSidebarProps = Readonly<{
